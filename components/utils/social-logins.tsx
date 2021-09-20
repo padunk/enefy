@@ -29,9 +29,6 @@ function SocialLogins({ handleSubmit }: Props): ReactElement {
 
   return (
     <>
-      <Text mt="4" mb="2">
-        Or login with
-      </Text>
       <Flex flexDirection="column">
         {providers.map((provider) => {
           return (

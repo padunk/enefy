@@ -1,4 +1,4 @@
-import { Flex, useMediaQuery } from "@chakra-ui/react"
+import { Flex, Heading, useMediaQuery } from "@chakra-ui/react"
 import { OAuthProvider } from "@magic-ext/oauth"
 import axios from "axios"
 import Router from "next/router"
@@ -57,14 +57,29 @@ function Login({}: Props): ReactElement {
 
   return (
     <Flex
-      flexDir={isLargerThan720 ? "row" : "column"}
-      justifyContent={isLargerThan720 ? "space-around" : "flex-start"}
-      alignItems="center"
       flexGrow={1}
+      flexDir="column"
       bgGradient="linear(100deg, transparent, transparent 50%, purple.500 calc(50% + 1px), purple.400 50%)"
     >
-      <EmailForm disabled={disabled} handleSubmit={handleLoginWithEmail} />
-      <SocialLogins handleSubmit={handleLoginWithSocial} />
+      <Heading
+        as="h2"
+        textAlign="center"
+        pt="16"
+        color="orangered"
+        letterSpacing="wide"
+      >
+        LOGIN
+      </Heading>
+      <Flex
+        flexGrow={1}
+        flexDir={isLargerThan720 ? "row" : "column"}
+        justifyContent={isLargerThan720 ? "space-around" : "flex-start"}
+        alignItems="center"
+        mt="-16"
+      >
+        <EmailForm disabled={disabled} handleSubmit={handleLoginWithEmail} />
+        <SocialLogins handleSubmit={handleLoginWithSocial} />
+      </Flex>
     </Flex>
   )
 }
